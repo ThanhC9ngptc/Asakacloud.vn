@@ -1,172 +1,130 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asaka Cloud - #1 Dịch Vụ Hosting & VPS Tại Việt Nam</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'asaka-blue': '#1e3a8a',
-                        'asaka-black': '#0f172a',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Custom gradient và animations */
-        .gradient-bg {
-            background: linear-gradient(to right, #1e3a8a, #0f172a);
-        }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .hover-scale {
-            transition: transform 0.3s ease;
-        }
-        .hover-scale:hover {
-            transform: scale(1.05);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zing Cloud - Cloud Hosting Thế Hệ Mới</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body>
 
-    <!-- Navbar -->
-    <nav class="gradient-bg shadow-lg fixed w-full z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-white">Asaka Cloud</a>
-            <ul class="hidden md:flex space-x-8">
-                <li><a href="#home" class="hover:text-blue-300 transition hover-scale">Trang Chủ</a></li>
-                <li><a href="#services" class="hover:text-blue-300 transition hover-scale">Dịch Vụ</a></li>
-                <li><a href="#pricing" class="hover:text-blue-300 transition hover-scale">Giá Cả</a></li>
-                <li><a href="#contact" class="hover:text-blue-300 transition hover-scale">Liên Hệ</a></li>
-            </ul>
-            <button id="mobile-menu" class="md:hidden text-white">☰</button>
-        </div>
-        <!-- Mobile menu (JS toggle) -->
-        <div id="mobile-nav" class="hidden md:hidden bg-black bg-opacity-50 py-4">
-            <ul class="px-4 space-y-2">
-                <li><a href="#home" class="block py-2 hover:text-blue-300">Trang Chủ</a></li>
-                <li><a href="#services" class="block py-2 hover:text-blue-300">Dịch Vụ</a></li>
-                <li><a href="#pricing" class="block py-2 hover:text-blue-300">Giá Cả</a></li>
-                <li><a href="#contact" class="block py-2 hover:text-blue-300">Liên Hệ</a></li>
-            </ul>
-        </div>
+  <!-- HEADER -->
+  <header class="navbar">
+    <div class="logo">Zing Cloud</div>
+    <nav>
+      <a href="#">Trang chủ</a>
+      <a href="#">Dịch vụ</a>
+      <a href="#">Hỗ trợ</a>
+      <a href="#">Liên hệ</a>
     </nav>
+    <div class="auth-buttons">
+      <button class="btn-outline">Đăng nhập</button>
+      <button class="btn-primary">Đăng ký</button>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="gradient-bg min-h-screen flex items-center justify-center pt-20">
-        <div class="container mx-auto px-4 text-center fade-in">
-            <h1 class="text-5xl md:text-6xl font-bold mb-4">Asaka Cloud - #1 Dịch Vụ Hosting & VPS Tại Việt Nam</h1>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">Chúng tôi mang đến những ưu điểm vượt trội để đảm bảo trải nghiệm máy chủ tốt nhất cho bạn. Máy chủ sẵn sàng chỉ trong 30 giây, hỗ trợ 24/7 qua Discord và ticket.</p>
-            <button class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg text-lg font-semibold hover-scale transition">Bắt Đầu Ngay</button>
-        </div>
-    </section>
+  <!-- HERO -->
+  <section class="hero">
+    <h1><span>Cloud Hosting</span> <br> Thế Hệ Mới</h1>
+    <p>Trải nghiệm hiệu suất vượt trội với giải pháp cloud hosting được tối ưu hóa cho mọi nhu cầu của bạn</p>
+    <div class="hero-buttons">
+      <button class="btn-primary">Khám phá dịch vụ →</button>
+      <button class="btn-outline">Liên hệ ngay</button>
+    </div>
+    <div class="hero-stats">
+      <div><b>99.9%</b><br>Uptime</div>
+      <div><b>24/7</b><br>Hỗ trợ</div>
+      <div><b>5000+</b><br>Khách hàng</div>
+      <div><b>10TB+</b><br>Bandwidth</div>
+    </div>
+  </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-800">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 fade-in">Dịch Vụ Của Chúng Tôi</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Performance Hosting -->
-                <div class="bg-gray-900 p-8 rounded-lg text-center hover-scale fade-in">
-                    <h3 class="text-2xl font-bold mb-4">Performance Hosting</h3>
-                    <p class="mb-4">CPU Gold 6146 - 4.1GHz, NVMe RAID 1, 40Gbps Port, Auto Backup mỗi 2 ngày. Khởi động server chỉ 13s.</p>
-                    <ul class="text-left mb-4">
-                        <li>• Hiệu năng cao cho SMP, Skyblock, Modded</li>
-                        <li>• Anti-DDoS Layer 4/7</li>
-                    </ul>
-                    <button class="bg-green-600 hover:bg-green-700 px-6 py-2 rounded">Chi Tiết</button>
-                </div>
-                <!-- Modded Hosting -->
-                <div class="bg-gray-900 p-8 rounded-lg text-center hover-scale fade-in">
-                    <h3 class="text-2xl font-bold mb-4">Modded Minecraft Hosting</h3>
-                    <p class="mb-4">Tối ưu cho Pixelmon, RLCraft, Fantasy RPG. Giảm 10% với mã MODDED-HOSTING.</p>
-                    <ul class="text-left mb-4">
-                        <li>• Hỗ trợ hàng nghìn modpack</li>
-                        <li>• Hiệu năng tối đa cho mod nặng</li>
-                    </ul>
-                    <button class="bg-green-600 hover:bg-green-700 px-6 py-2 rounded">Chi Tiết</button>
-                </div>
-                <!-- Ryzen Hosting -->
-                <div class="bg-gray-900 p-8 rounded-lg text-center hover-scale fade-in">
-                    <h3 class="text-2xl font-bold mb-4">Ryzen Hosting</h3>
-                    <p class="mb-4">AMD Ryzen 9 9900X/9950X, 5.3GHz+, DDR5 6000MHz, SSD NVMe Gen4, Anti-DDoS XDP Filter.</p>
-                    <ul class="text-left mb-4">
-                        <li>• Hiệu năng 2.5x so sánh</li>
-                        <li>• Datacenter FPT/CMC</li>
-                    </ul>
-                    <button class="bg-green-600 hover:bg-green-700 px-6 py-2 rounded">Chi Tiết</button>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- SERVICES -->
+  <section class="services">
+    <h2>Dịch vụ của chúng tôi</h2>
+    <p>Lựa chọn giải pháp phù hợp với nhu cầu của bạn</p>
+    <div class="service-grid">
+      <div class="card">
+        <h3>VPS Cloud</h3>
+        <ul>
+          <li>Tài nguyên độc lập</li>
+          <li>NVMe SSD</li>
+          <li>Full Root Access</li>
+        </ul>
+        <button class="btn-primary">Xem chi tiết →</button>
+      </div>
+      <div class="card">
+        <h3>Cloud Game</h3>
+        <ul>
+          <li>Anti-DDoS Layer 7</li>
+          <li>Low Latency</li>
+          <li>Auto Backup</li>
+        </ul>
+        <button class="btn-primary">Xem chi tiết →</button>
+      </div>
+      <div class="card">
+        <h3>Dedicated Server</h3>
+        <ul>
+          <li>100% Tài nguyên</li>
+          <li>Enterprise Hardware</li>
+          <li>10Gbps Network</li>
+        </ul>
+        <button class="btn-primary">Xem chi tiết →</button>
+      </div>
+    </div>
+  </section>
 
-    <!-- Pricing Section (Mẫu đơn giản) -->
-    <section id="pricing" class="py-20 gradient-bg">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 fade-in">Bảng Giá</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-900 p-6 rounded-lg text-center">
-                    <h3 class="text-2xl mb-2">VPS Basic</h3>
-                    <p class="text-3xl font-bold mb-4">51.000 VNĐ/tháng</p>
-                    <ul class="mb-4">
-                        <li>• 1 CPU, 2GB RAM</li>
-                        <li>• 50GB NVMe</li>
-                    </ul>
-                    <button class="bg-blue-600 hover:bg-blue-700 w-full py-2 rounded">Mua Ngay</button>
-                </div>
-                <!-- Thêm các gói khác tương tự -->
-            </div>
-        </div>
-    </section>
+  <!-- WHY CHOOSE US -->
+  <section class="features">
+    <h2>Tại sao chọn <span>Zing Cloud?</span></h2>
+    <p>Chúng tôi mang đến trải nghiệm cloud hosting tốt nhất</p>
+    <div class="feature-grid">
+      <div class="feature-card">Hiệu suất cao</div>
+      <div class="feature-card">Bảo mật tối đa</div>
+      <div class="feature-card">Hỗ trợ 24/7</div>
+      <div class="feature-card">Backup tự động</div>
+      <div class="feature-card">Dễ dàng mở rộng</div>
+      <div class="feature-card">Giá cả hợp lý</div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer id="contact" class="bg-black py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2025 Asaka Cloud. Tất cả quyền được bảo lưu. Hỗ trợ: support@asakacloud.vn | Discord: discord.gg/asaka</p>
-            <div class="mt-4 space-x-4">
-                <a href="#" class="hover:text-blue-300">Điều Khoản</a>
-                <a href="#" class="hover:text-blue-300">Chính Sách</a>
-            </div>
-        </div>
-    </footer>
+  <!-- SUPPORT -->
+  <section class="support">
+    <h2>Cần hỗ trợ?</h2>
+    <p>Đội ngũ chuyên gia của chúng tôi luôn sẵn sàng giải đáp mọi thắc mắc của bạn</p>
+    <div class="support-buttons">
+      <button class="btn-outline">Liên hệ ngay</button>
+      <a href="tel:0705983391" class="btn-primary">📞 0705 983 391</a>
+    </div>
+  </section>
 
-    <!-- JavaScript cho animations và mobile menu -->
-    <script>
-        // Fade-in on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <h3>Zing Cloud</h3>
+        <p>Cloud hosting thế hệ mới với hiệu suất vượt trội</p>
+      </div>
+      <div>
+        <h4>Dịch vụ</h4>
+        <ul>
+          <li>VPS Cloud</li>
+          <li>Cloud Game</li>
+          <li>Dedicated Server</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hỗ trợ</h4>
+        <ul>
+          <li>Tài liệu</li>
+          <li>FAQ</li>
+          <li>Liên hệ</li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© 2024 Zing Cloud. All rights reserved.</p>
+  </footer>
 
-        // Mobile menu toggle
-        document.getElementById('mobile-menu').addEventListener('click', () => {
-            document.getElementById('mobile-nav').classList.toggle('hidden');
-        });
-
-        // Smooth scroll cho links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
 </body>
 </html>
-
