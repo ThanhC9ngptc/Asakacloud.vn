@@ -1,0 +1,6 @@
+/* tailwind.css - small loader that uses CDN runtime.
+   If you prefer fully-local compiled CSS, tell me and I will provide build output. */
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@3.4.14/dist/tailwind.min.css');
+/* small overrides to ensure fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+* { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
