@@ -1,44 +1,65 @@
 <!DOCTYPE html>
 <html lang="vi">
+>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Zing Cloud - Demo</title>
+  <title>Zing Cloud</title>
 
-  <!-- local tailwind loader (this file below imports CDN for convenience) -->
-  <link rel="stylesheet" href="tailwind.css">
+  <!-- ✅ Tailwind CDN (fix GitHub Pages not loading local CSS) -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- custom style -->
+  <!-- Custom styles (nếu bạn có) -->
   <link rel="stylesheet" href="style.css">
 
+  <link rel="icon" href="logo.png" type="image/png">
 </head>
-<body class="bg-gradient-to-b from-[#07080b] via-[#0b0f19] to-[#050508] text-white font-sans">
 
+<body class="bg-gradient-to-br from-[#0a0a0f] via-[#121420] to-[#06070c] text-white font-sans overflow-x-hidden">
   <!-- HEADER -->
-  <header id="header" class="fixed w-full z-50 top-0 left-0 transition-all duration-300 backdrop-blur-sm bg-black/20 border-b border-white/5">
-    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 md:px-6 py-5">
+  <header id="header"
+    class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/30 border-b border-white/10 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-5 flex items-center justify-between h-20">
       <div class="flex items-center gap-3">
-        <img src="logo.svg" alt="Zing Cloud" class="w-10 h-10" />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-500 to-cyan-400 font-extrabold text-lg">Zing Cloud</span>
+        <!-- ✅ Đổi logo.svg → logo.png -->
+        <img src="logo.png" alt="Zing Cloud Logo" class="w-10 h-10 drop-shadow-lg" />
+        <span
+          class="text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-500 to-cyan-400 select-none">
+          Zing Cloud
+        </span>
       </div>
 
-      <nav class="hidden md:flex gap-6 text-gray-300 text-sm">
-        <a href="#home" class="hover:text-white">Trang chủ</a>
-        <a href="#services" class="hover:text-white">Dịch vụ</a>
-        <a href="#support" class="hover:text-white">Hỗ trợ</a>
-        <a href="#contact" class="hover:text-white">Liên hệ</a>
+      <nav class="hidden md:flex items-center gap-8 text-gray-300 font-medium">
+        <a href="#home" class="hover:text-white transition">Trang chủ</a>
+        <a href="#services" class="hover:text-white transition">Dịch vụ</a>
+        <a href="#support" class="hover:text-white transition">Hỗ trợ</a>
+        <a href="#contact" class="hover:text-white transition">Liên hệ</a>
       </nav>
 
       <div class="flex items-center gap-3">
         <div id="userArea" class="flex items-center gap-3">
-          <button id="loginBtn" class="btn-ghost">Đăng nhập</button>
-          <button id="registerBtn" class="btn-primary">Đăng ký</button>
+          <button id="loginBtn"
+            class="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-cyan-400 hover:scale-105 transition-all duration-200 shadow-lg">
+            Đăng nhập
+          </button>
+          <button id="registerBtn"
+            class="px-4 py-2 rounded-lg border border-cyan-400 text-cyan-300 hover:bg-cyan-500/10 hover:scale-105 transition-all duration-200">
+            Đăng ký
+          </button>
         </div>
+
+        <!-- Avatar -->
         <div id="avatarWrap" class="hidden relative">
-          <button id="avatarBtn" aria-label="User menu" class="w-10 h-10 rounded-full bg-gradient-to-tr from-indigo-500 to-cyan-400 flex items-center justify-center text-black font-bold">A</button>
-          <div id="avatarMenu" class="hidden absolute right-0 mt-2 w-44 bg-[#091026cc] backdrop-blur-md border border-white/10 rounded-lg py-2 shadow">
-            <a href="#" id="profileBtn" class="block px-4 py-2 text-sm hover:bg-white/5">Hồ sơ</a>
-            <button id="logoutBtn" class="w-full text-left px-4 py-2 text-sm hover:bg-white/5">Đăng xuất</button>
+          <button id="avatarBtn"
+            class="w-10 h-10 rounded-full bg-gradient-to-tr from-indigo-500 to-cyan-400 flex items-center justify-center text-black font-bold shadow">
+            A
+          </button>
+          <div id="avatarMenu"
+            class="hidden absolute right-0 mt-2 w-44 bg-[#0b0e18cc] backdrop-blur-lg border border-white/10 rounded-lg py-2 shadow-lg">
+            <a href="#" id="profileBtn"
+              class="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10 transition">Hồ sơ</a>
+            <button id="logoutBtn"
+              class="w-full text-left px-4 py-2 text-sm text-gray-200 hover:bg-white/10 transition">Đăng xuất</button>
           </div>
         </div>
       </div>
@@ -47,113 +68,82 @@
 
   <!-- MAIN -->
   <main id="home" class="pt-28">
-    <!-- HERO -->
-    <section class="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
-      <h1 class="text-4xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-indigo-400 to-cyan-400 text-transparent bg-clip-text">Cloud Hosting Thế Hệ Mới</h1>
-      <p class="text-gray-300 max-w-2xl mb-8">Trải nghiệm hiệu suất vượt trội với giải pháp cloud hosting được tối ưu cho mọi nhu cầu của bạn.</p>
-      <div class="flex gap-4">
-        <button class="btn-primary btn-zoom">Khám phá dịch vụ →</button>
-        <button id="contactNow" class="btn-outline btn-zoom">Liên hệ ngay</button>
+    <section class="min-h-[70vh] flex flex-col justify-center items-center text-center px-6">
+      <h1
+        class="text-4xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+        Cloud Hosting Thế Hệ Mới
+      </h1>
+      <p class="text-gray-300 max-w-2xl mb-8">
+        Trải nghiệm hiệu suất vượt trội với hạ tầng Cloud thế hệ mới, an toàn và ổn định.
+      </p>
+      <div class="flex gap-4 flex-wrap justify-center">
+        <button
+          class="px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-cyan-400 text-white font-medium shadow-lg hover:scale-105 transition">
+          Khám phá dịch vụ →
+        </button>
+        <button
+          class="px-6 py-3 rounded-xl border border-cyan-400 text-cyan-300 hover:bg-cyan-500/10 hover:scale-105 transition">
+          Liên hệ ngay
+        </button>
       </div>
     </section>
 
-    <!-- STATS STRIP (small) -->
-    <section class="max-w-6xl mx-auto px-4 py-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-        <div class="glass-small p-4 rounded-xl">
-          <div class="text-2xl font-bold">99.9%</div>
-          <div class="text-xs text-gray-300">Uptime</div>
-        </div>
-        <div class="glass-small p-4 rounded-xl">
-          <div class="text-2xl font-bold">24/7</div>
-          <div class="text-xs text-gray-300">Hỗ trợ</div>
-        </div>
-        <div class="glass-small p-4 rounded-xl">
-          <div class="text-2xl font-bold">5000+</div>
-          <div class="text-xs text-gray-300">Khách hàng</div>
-        </div>
-        <div class="glass-small p-4 rounded-xl">
-          <div class="text-2xl font-bold">10TB+</div>
-          <div class="text-xs text-gray-300">Bandwidth</div>
+    <!-- DỊCH VỤ -->
+    <section id="services" class="py-20 px-6 bg-black/20 backdrop-blur-md">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-10 bg-gradient-to-r from-indigo-400 to-cyan-400 text-transparent bg-clip-text">
+          Dịch vụ của chúng tôi
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="p-6 rounded-2xl bg-white/10 hover:bg-white/20 transition transform hover:scale-105 shadow-lg cursor-pointer">
+            <h3 class="font-semibold text-xl mb-3 text-indigo-300">VPS Cloud</h3>
+            <p class="text-gray-300 mb-4">Hiệu năng mạnh mẽ, uptime 99.99%, SSD NVMe tốc độ cao.</p>
+            <button
+              class="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-cyan-400 text-sm hover:scale-105 transition">Xem
+              chi tiết</button>
+          </div>
+          <div
+            class="p-6 rounded-2xl bg-white/10 hover:bg-white/20 transition transform hover:scale-105 shadow-lg cursor-pointer">
+            <h3 class="font-semibold text-xl mb-3 text-indigo-300">Cloud Game</h3>
+            <p class="text-gray-300 mb-4">Chơi game mượt mà trên cloud, hỗ trợ GPU RTX, low latency.</p>
+            <button
+              class="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-cyan-400 text-sm hover:scale-105 transition">Xem
+              chi tiết</button>
+          </div>
+          <div
+            class="p-6 rounded-2xl bg-white/10 hover:bg-white/20 transition transform hover:scale-105 shadow-lg cursor-pointer">
+            <h3 class="font-semibold text-xl mb-3 text-indigo-300">Dedicated Server</h3>
+            <p class="text-gray-300 mb-4">Tài nguyên độc lập, hiệu năng tối đa, bảo mật cao.</p>
+            <button
+              class="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-cyan-400 text-sm hover:scale-105 transition">Xem
+              chi tiết</button>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="max-w-6xl mx-auto px-4 py-12">
-      <h2 class="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-indigo-400 to-cyan-400 text-transparent bg-clip-text">Dịch vụ của chúng tôi</h2>
-      <p class="text-center text-gray-400 mb-8">Lựa chọn giải pháp phù hợp với nhu cầu của bạn</p>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Card 1 -->
-        <article class="service-card glass-card p-6 rounded-2xl">
-          <div class="mb-4 flex items-center gap-3">
-            <div class="w-12 h-12 rounded-lg bg-gradient-to-tr from-indigo-500 to-cyan-400 flex items-center justify-center font-bold text-black">V</div>
-            <h3 class="text-xl font-semibold">VPS Cloud</h3>
-          </div>
-          <ul class="text-gray-300 mb-6 space-y-1">
-            <li>CPU 4 Core · RAM 8GB</li>
-            <li>SSD NVMe 100GB</li>
-            <li>Full Root Access</li>
-          </ul>
-          <div class="flex gap-3">
-            <button class="btn-primary open-service btn-zoom" data-service="vps">Xem chi tiết</button>
-          </div>
-        </article>
-
-        <!-- Card 2 -->
-        <article class="service-card glass-card p-6 rounded-2xl">
-          <div class="mb-4 flex items-center gap-3">
-            <div class="w-12 h-12 rounded-lg bg-gradient-to-tr from-indigo-500 to-cyan-400 flex items-center justify-center font-bold text-black">G</div>
-            <h3 class="text-xl font-semibold">Cloud Game</h3>
-          </div>
-          <ul class="text-gray-300 mb-6 space-y-1">
-            <li>GPU RTX · Low Latency</li>
-            <li>Anti-DDoS Layer 7</li>
-            <li>Auto Backup</li>
-          </ul>
-          <div class="flex gap-3">
-            <button class="btn-primary open-service btn-zoom" data-service="game">Xem chi tiết</button>
-          </div>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="service-card glass-card p-6 rounded-2xl">
-          <div class="mb-4 flex items-center gap-3">
-            <div class="w-12 h-12 rounded-lg bg-gradient-to-tr from-indigo-500 to-cyan-400 flex items-center justify-center font-bold text-black">D</div>
-            <h3 class="text-xl font-semibold">Dedicated Server</h3>
-          </div>
-          <ul class="text-gray-300 mb-6 space-y-1">
-            <li>100% tài nguyên</li>
-            <li>Enterprise Hardware</li>
-            <li>10Gbps Network</li>
-          </ul>
-          <div class="flex gap-3">
-            <button class="btn-primary open-service btn-zoom" data-service="dedicated">Xem chi tiết</button>
-          </div>
-        </article>
-      </div>
+    <!-- QR DEMO -->
+    <section id="checkout" class="py-20 px-6 text-center">
+      <h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-indigo-400 to-cyan-400 text-transparent bg-clip-text">Thanh
+        toán QR demo</h2>
+      <p class="text-gray-300 mb-6">Quét mã để thanh toán thử nghiệm</p>
+      <img src="qr-demo.png" alt="QR demo" class="mx-auto w-40 h-40 rounded-xl shadow-lg" />
     </section>
 
-    <!-- WHY -->
-    <section class="max-w-6xl mx-auto px-4 py-12">
-      <h2 class="text-3xl font-bold text-center mb-6">Tại sao chọn Zing Cloud?</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="glass-card p-6 rounded-xl">Hiệu suất cao</div>
-        <div class="glass-card p-6 rounded-xl">Bảo mật tối đa</div>
-        <div class="glass-card p-6 rounded-xl">Hỗ trợ 24/7</div>
-      </div>
-    </section>
-
-    <!-- SUPPORT CTA -->
-    <section id="support" class="max-w-6xl mx-auto px-4 py-12">
-      <div class="glass-cta p-8 rounded-2xl text-center">
-        <div class="mb-4"><div class="w-16 h-16 mx-auto rounded-xl bg-gradient-to-tr from-indigo-500 to-cyan-400 flex items-center justify-center font-bold text-black">Z</div></div>
-        <h3 class="text-2xl font-bold mb-2">Cần hỗ trợ?</h3>
-        <p class="text-gray-300 mb-4">Đội ngũ chuyên gia luôn sẵn sàng giải đáp mọi thắc mắc của bạn.</p>
-        <div class="flex justify-center gap-4">
-          <button id="supportContact" class="btn-primary">Liên hệ ngay</button>
-          <a href="tel:0705983391" class="btn-outline">0705 983 391</a>
+    <!-- HỖ TRỢ -->
+    <section id="support" class="py-20 bg-black/30 backdrop-blur-lg">
+      <div class="max-w-4xl mx-auto text-center px-4">
+        <h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-indigo-400 to-cyan-400 text-transparent bg-clip-text">
+          Cần hỗ trợ?</h2>
+        <p class="text-gray-300 mb-6">Liên hệ đội ngũ hỗ trợ 24/7 của chúng tôi qua các kênh bên dưới</p>
+        <div class="flex justify-center gap-6 flex-wrap">
+          <a href="mailto:ZingCloud.tech@gmail.com"
+            class="px-4 py-2 rounded-lg border border-cyan-400 text-cyan-300 hover:bg-cyan-500/10 transition">Email</a>
+          <a href="tel:0705983391"
+            class="px-4 py-2 rounded-lg border border-cyan-400 text-cyan-300 hover:bg-cyan-500/10 transition">Hotline</a>
+          <a href="#" class="px-4 py-2 rounded-lg border border-cyan-400 text-cyan-300 hover:bg-cyan-500/10 transition">Discord</a>
+          <a href="#" class="px-4 py-2 rounded-lg border border-cyan-400 text-cyan-300 hover:bg-cyan-500/10 transition">Facebook</a>
         </div>
       </div>
     </section>
@@ -165,95 +155,66 @@
       <div class="flex items-start justify-between gap-6">
         <div>
           <div class="flex items-center gap-3">
-            <img src="logo.svg" alt="Z" class="w-8 h-8" />
-            <span class="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-cyan-400">Zing Cloud</span>
+            <img src="logo.png" alt="Zing Cloud" class="w-8 h-8" />
+            <span
+              class="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-cyan-400">Zing Cloud</span>
           </div>
           <p class="mt-3 text-sm">Cloud hosting thế hệ mới với hiệu suất vượt trội.</p>
         </div>
-        <div class="hidden md:block">
-          <h4 class="font-semibold mb-2">Dịch vụ</h4>
-          <ul class="text-sm space-y-1">
-            <li>VPS Cloud</li>
-            <li>Cloud Game</li>
-            <li>Dedicated Server</li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-semibold mb-2">Hỗ trợ</h4>
-          <ul class="text-sm space-y-1">
-            <li>Tài liệu</li>
-            <li>FAQ</li>
-            <li>Liên hệ</li>
-          </ul>
-        </div>
       </div>
-
-      <div class="mt-8 text-center text-xs text-gray-500">© 2024 Zing Cloud. All rights reserved.</div>
+      <div class="mt-8 text-center text-xs text-gray-500">© 2025 Zing Cloud. All rights reserved.</div>
     </div>
   </footer>
 
-  <!-- LOGIN MODAL -->
-  <div id="loginModal" class="modal" aria-hidden="true" aria-labelledby="loginTitle" role="dialog">
-    <div class="modal-box" role="document">
-      <button class="modal-close" aria-label="Close">&times;</button>
-      <h3 id="loginTitle" class="text-2xl font-bold mb-4">Đăng nhập</h3>
-      <input id="loginEmail" class="input" type="email" placeholder="Email" />
-      <input id="loginPass" class="input mt-3" type="password" placeholder="Mật khẩu" />
-      <button id="loginSubmit" class="btn-submit mt-4 w-full">Đăng nhập</button>
-      <p class="text-sm text-gray-300 mt-3">Chưa có tài khoản? <a href="#" id="toRegister" class="text-indigo-400">Đăng ký</a></p>
+  <!-- POPUP LOGIN/REGISTER -->
+  <div id="popup" class="hidden fixed inset-0 bg-black/70 backdrop-blur-md flex justify-center items-center z-[9999]">
+    <div class="bg-[#0e1220] border border-white/10 p-8 rounded-2xl w-80 text-center shadow-xl">
+      <h3 id="popup-title" class="text-2xl font-bold mb-4">Đăng nhập</h3>
+      <input type="text" placeholder="Tên đăng nhập"
+        class="w-full mb-3 p-2 rounded bg-white/10 border border-white/10 focus:outline-none focus:border-cyan-400 text-white" />
+      <input type="password" placeholder="Mật khẩu"
+        class="w-full mb-4 p-2 rounded bg-white/10 border border-white/10 focus:outline-none focus:border-cyan-400 text-white" />
+      <button id="popup-action"
+        class="w-full py-2 rounded bg-gradient-to-r from-indigo-500 to-cyan-400 text-white font-semibold hover:scale-105 transition">Xác
+        nhận</button>
+      <button id="close-popup"
+        class="mt-3 w-full py-2 rounded border border-cyan-400 text-cyan-300 hover:bg-cyan-500/10">Đóng</button>
     </div>
   </div>
 
-  <!-- REGISTER MODAL -->
-  <div id="registerModal" class="modal" aria-hidden="true" aria-labelledby="registerTitle" role="dialog">
-    <div class="modal-box" role="document">
-      <button class="modal-close" aria-label="Close">&times;</button>
-      <h3 id="registerTitle" class="text-2xl font-bold mb-4">Đăng ký</h3>
-      <input id="regEmail" class="input" type="email" placeholder="Email" />
-      <input id="regPass" class="input mt-3" type="password" placeholder="Mật khẩu" />
-      <button id="regSubmit" class="btn-submit mt-4 w-full">Tạo tài khoản</button>
-      <p class="text-sm text-gray-300 mt-3">Đã có tài khoản? <a href="#" id="toLogin" class="text-indigo-400">Đăng nhập</a></p>
-    </div>
-  </div>
+  <script>
+    const popup = document.getElementById('popup');
+    const popupTitle = document.getElementById('popup-title');
+    const loginBtn = document.getElementById('loginBtn');
+    const registerBtn = document.getElementById('registerBtn');
+    const closePopup = document.getElementById('close-popup');
+    const userArea = document.getElementById('userArea');
+    const avatarWrap = document.getElementById('avatarWrap');
+    const avatarBtn = document.getElementById('avatarBtn');
+    const avatarMenu = document.getElementById('avatarMenu');
+    const logoutBtn = document.getElementById('logoutBtn');
 
-  <!-- SERVICE DETAIL MODAL -->
-  <div id="serviceModal" class="modal" aria-hidden="true" role="dialog">
-    <div class="modal-box">
-      <button class="modal-close" aria-label="Close">&times;</button>
-      <h3 id="serviceTitle" class="text-2xl font-bold mb-4"></h3>
-      <p id="serviceDesc" class="text-gray-300 mb-6"></p>
+    loginBtn.onclick = () => {
+      popupTitle.textContent = 'Đăng nhập';
+      popup.style.display = 'flex';
+    };
+    registerBtn.onclick = () => {
+      popupTitle.textContent = 'Đăng ký';
+      popup.style.display = 'flex';
+    };
+    closePopup.onclick = () => popup.style.display = 'none';
+    window.onclick = (e) => { if (e.target === popup) popup.style.display = 'none'; };
 
-      <div id="plans" class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- JS injects plan cards -->
-      </div>
-    </div>
-  </div>
-
-  <!-- CHECKOUT / QR MODAL -->
-  <div id="checkoutModal" class="modal" aria-hidden="true" role="dialog">
-    <div class="modal-box">
-      <button class="modal-close" aria-label="Close">&times;</button>
-      <h3 id="checkoutTitle" class="text-2xl font-bold mb-4">Thanh toán (Demo)</h3>
-      <p id="checkoutInfo" class="text-gray-300 mb-4"></p>
-      <div class="flex flex-col items-center gap-4">
-        <img id="qrImage" src="qr-demo.png" alt="QR" class="w-48 h-48 bg-white/5 rounded-md" />
-        <small class="text-gray-400">Quét QR để demo thanh toán</small>
-      </div>
-    </div>
-  </div>
-
-  <!-- CONTACT MENU (FAB) -->
-  <div id="fab" class="fixed right-6 bottom-6 z-60">
-    <button id="fabBtn" class="w-14 h-14 rounded-full bg-gradient-to-tr from-indigo-500 to-cyan-400 shadow-lg text-black font-bold">✆</button>
-    <div id="fabMenu" class="hidden mt-3 w-64 bg-[#071026cc] backdrop-blur-md border border-white/10 rounded-2xl py-3 px-3 text-sm">
-      <div class="font-semibold mb-2">Liên hệ Zing Cloud</div>
-      <a class="block py-1 hover:text-cyan-300" href="mailto:ZingCloud.tech@gmail.com">📧 Email: ZingCloud.tech@gmail.com</a>
-      <a class="block py-1 hover:text-cyan-300" href="tel:0705983391">📞 Hotline: 0705 983 391</a>
-      <a class="block py-1 hover:text-cyan-300" href="https://facebook.com" target="_blank">💬 Facebook</a>
-      <a class="block py-1 hover:text-cyan-300" href="https://discord.com" target="_blank">🎮 Discord</a>
-    </div>
-  </div>
-
-  <script src="app.js"></script>
+    document.getElementById('popup-action').onclick = () => {
+      popup.style.display = 'none';
+      userArea.style.display = 'none';
+      avatarWrap.classList.remove('hidden');
+    };
+    avatarBtn.onclick = () => avatarMenu.classList.toggle('hidden');
+    logoutBtn.onclick = () => {
+      avatarWrap.classList.add('hidden');
+      userArea.style.display = 'flex';
+    };
+  </script>
 </body>
-          </html>
+</html>
